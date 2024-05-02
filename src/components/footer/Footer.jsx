@@ -5,7 +5,7 @@ const Footer = () => {
     <div className={styles.container}>
       <div className={styles.logo}>ElucG</div>
       <div className={styles.text}>
-        ElucG's Thesis Project for Fudan University © All rights reserved.
+        ElucG&#39;s Thesis Project for Fudan University © All rights reserved.
       </div>
     </div>
   );
