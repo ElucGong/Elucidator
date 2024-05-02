@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import axios from "axios";
 import { authConfig } from "./auth.config";
 
-const ip = "http://localhost:8080"
+const ip = process.env.BACKEND
 
 const login = async (credentials) => {
     try {
