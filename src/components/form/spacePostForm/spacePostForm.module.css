@@ -1,0 +1,32 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+.input {
+    padding: 20px;
+    background-color: var(--bg);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+}
+
+.form button {
+    padding: 20px;
+    cursor: pointer;
+    background-color: var(--btn);
+    color: var(--text);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.form button:hover{
+    background-color: rgb(80, 175, 253)
+}
+
+.form label{
+    margin-top: 10px;
+}

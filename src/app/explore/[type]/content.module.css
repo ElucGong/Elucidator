@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.top{
+    margin-top: 20px;
+}
+
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.post {
+    width: 23.6%;
+}
+
+.user{
+    width: 49%;
+}
+
+@media screen and (max-width: 1280px) {
+    .post {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .post {
+        width: 100%;
+    }
+
+    .user{
+        width: 100%;
+    }
+}

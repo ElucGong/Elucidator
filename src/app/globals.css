@@ -1,0 +1,69 @@
+@import url(https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/jxzk/dist/江西拙楷/result.css);
+
+:root{
+  --bg: #fcfcfc;
+  --bgSoft: #ffcf7d;
+  --text: black;
+  --btn: #6291ff;
+  --btnRed: #ff3c00;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--bg);
+  color: var(--text);
+  font-family:'jiangxizhuokai', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.container{
+  width: 1536px;
+  margin: auto;
+  margin-top: 10px;
+  min-height: 75vh;
+}
+
+@media (max-width: 1536px){
+  .container{
+    width: 1366px;
+  }
+}
+
+@media (max-width: 1366px){
+  .container{
+    width: 1280px;
+  }
+}
+
+@media (max-width: 1280px){
+  .container{
+    width: 1024px;
+  }
+}
+
+@media (max-width: 1024px){
+  .container{
+    width: 768px;
+  }
+}
+
+@media (max-width: 768px){
+  .container{
+    width: 640px;
+  }
+}
+
+@media (max-width: 640px){
+  .container{
+    width: 475px;
+  }
+}

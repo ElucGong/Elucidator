@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.button{
+    background-color: var(--bgSoft);
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.post {
+    width: 100%;
+}
