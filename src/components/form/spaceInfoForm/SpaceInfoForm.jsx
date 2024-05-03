@@ -25,7 +25,7 @@ const SpaceInfoForm = ({ user }) => {
       messageApi.destroy()
       messageApi.success(state.success, 1).then(() => router.push("/space"))
     }
-  }, [state, router])
+  }, [state, router, messageApi])
 
   const renderAvatar = () => {
     if (avatar == 'origin')

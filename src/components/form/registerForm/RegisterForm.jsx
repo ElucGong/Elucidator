@@ -23,7 +23,7 @@ const RegisterForm = () => {
       messageApi.destroy()
       messageApi.success(state.success, 1).then(() => router.push("/login"))
     }
-  }, [state, router])
+  }, [state, router, messageApi])
 
   return (
     <form className={styles.form} action={formAction}>

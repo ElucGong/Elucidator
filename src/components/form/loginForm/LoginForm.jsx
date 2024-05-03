@@ -16,7 +16,7 @@ const LoginForm = () => {
       messageApi.destroy()
       messageApi.error(state.error)
     }
-  }, [state])
+  }, [state, messageApi])
 
   return (
     <form className={styles.form} action={formAction}>

@@ -22,7 +22,7 @@ const SpacePostForm = ({ user, task, post, action }) => {
       messageApi.destroy()
       messageApi.success(state.success, 1).then(() => router.push("/space?type=post&page=1&size=10"))
     }
-  }, [state, router])
+  }, [state, router, messageApi])
 
   return (
     <form className={styles.form} action={formAction}>
