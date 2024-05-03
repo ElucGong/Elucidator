@@ -3,8 +3,11 @@
 :root{
   --bg: #fcfcfc;
   --bgSoft: #ffcf7d;
+  --bgHard: #ffb623;
   --text: black;
   --btn: #6291ff;
+  --btnHover: rgb(80, 175, 253);
+  --ctnHover: rgb(248, 234, 209);
   --btnRed: #ff3c00;
 }
 

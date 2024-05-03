@@ -12,12 +12,20 @@ import { Avatar, message } from 'antd'
 const SpaceInfoForm = ({ user }) => {
   const [state, formAction] = useFormState(updateUserInfo, undefined)
   const [avatar, setAvatar] = useState(user.avatar)
+  const [messageApi, contextHolder] = message.useMessage()
 
   const router = useRouter()
 
   useEffect(() => {
-    state?.success && router.push("/space")
-  }, [state?.success, router])
+    if (state?.error){
+      messageApi.destroy()
+      messageApi.error(state.error)
+    }
+    else if (state?.success) {
+      messageApi.destroy()
+      messageApi.success(state.success, 1).then(() => router.push("/space"))
+    }
+  }, [state, router])
 
   const renderAvatar = () => {
     if (avatar == 'origin')
@@ -60,8 +68,8 @@ const SpaceInfoForm = ({ user }) => {
       </div>
       <input type="hidden" name="id" value={user.id} />
       <input type="hidden" name="avatar" value={user.avatar} />
-      <button>保存</button>
-      {state?.error && message.error(state?.error)}
+      <button onClick={() => messageApi.loading("正在执行操作...")}>保存</button>
+      {contextHolder}
     </form>
   )
 }

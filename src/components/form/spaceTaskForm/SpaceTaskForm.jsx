@@ -9,12 +9,20 @@ import { message } from 'antd'
 
 const SpaceTaskForm = ({ user, task, action }) => {
   const [state, formAction] = useFormState(action, undefined)
+  const [messageApi, contextHolder] = message.useMessage()
 
   const router = useRouter()
 
   useEffect(() => {
-    state?.success && router.push("/space")
-  }, [state?.success, router])
+    if (state?.error){
+      messageApi.destroy()
+      messageApi.error(state.error)
+    }
+    else if (state?.success) {
+      messageApi.destroy()
+      messageApi.success(state.success, 1).then(() => router.push("/space"))
+    }
+  }, [state, router])
 
   return (
     <form className={styles.form} action={formAction}>
@@ -51,8 +59,8 @@ const SpaceTaskForm = ({ user, task, action }) => {
       <input type="hidden" name="id" value={task?.id} />
       <input type="hidden" name="oldMedia" value={task?.media} />
       <input type="hidden" name="oldCover" value={task?.cover} />
-      <button >提交</button>
-      {state?.error && message.error(state?.error)}
+      <button onClick={() => messageApi.loading("正在执行操作...")}>提交</button>
+      {contextHolder}
     </form>
   )
 }

@@ -30,5 +30,5 @@
 
 .link:hover{
     cursor: pointer;
-    color: rgb(80, 175, 253)
+    color: var(--btnHover)
 }

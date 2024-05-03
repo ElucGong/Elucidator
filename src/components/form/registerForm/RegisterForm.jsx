@@ -10,12 +10,20 @@ import { message } from "antd"
 
 const RegisterForm = () => {
   const [state, formAction] = useFormState(register, undefined)
+  const [messageApi, contextHolder] = message.useMessage()
 
   const router = useRouter()
 
   useEffect(() => {
-    state?.success && router.push("/login")
-  }, [state?.success, router])
+    if (state?.error){
+      messageApi.destroy()
+      messageApi.error(state.error)
+    }
+    else if (state?.success) {
+      messageApi.destroy()
+      messageApi.success(state.success, 1).then(() => router.push("/login"))
+    }
+  }, [state, router])
 
   return (
     <form className={styles.form} action={formAction}>
@@ -27,11 +35,11 @@ const RegisterForm = () => {
         placeholder="再次输入密码"
         name="passwordRepeat"
       />
-      <button>注册</button>
-      {state?.error && message.error(state?.error)}
+      <button onClick={() => messageApi.loading("正在执行操作...")}>注册</button>
       <Link href="/login">
         一级注册过账号? <b>前往登录</b>
       </Link>
+      {contextHolder}
     </form>
   )
 }

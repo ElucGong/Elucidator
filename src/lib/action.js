@@ -3,7 +3,7 @@
 import bcrypt from "bcryptjs"
 import axios from "axios"
 import { signOut, signIn } from "./auth"
-import { revalidatePath, revalidateTag } from "next/cache"
+import { revalidateTag } from "next/cache"
 
 const ip = process.env.BACKEND
 
@@ -50,7 +50,7 @@ export const register = async (prevState, formData) => {
         data: newUser
     })
 
-    return res.data >= 1 ? { success: true } : { error: "创建失败" }
+    return res.data >= 1 ? { success: "创建成功！" } : { error: "创建失败！" }
 }
 
 export const login = async (prevState, formData) => {
@@ -118,7 +118,7 @@ export const updateUserInfo = async (prevState, formData) => {
     })
     revalidateTag("user")
 
-    return res.data >= 1 ? { success: true } : { error: "Fail to update" }
+    return res.data >= 1 ? { success: "修改成功！" } : { error: "修改失败！" }
 }
 
 export const setUserState = async (id, isActive) => {
@@ -192,7 +192,7 @@ export const createTask = async (prevState, formData) => {
     })
     revalidateTag("task")
 
-    return res.data >= 1 ? { success: true } : { error: "Fail to create" }
+    return res.data >= 1 ? { success: "创建成功！" } : { error: "创建失败！" }
 }
 
 export const updateTask = async (prevState, formData) => {
@@ -253,7 +253,7 @@ export const updateTask = async (prevState, formData) => {
     })
     revalidateTag("task")
 
-    return res.data >= 1 ? { success: true } : { error: "Fail to update" }
+    return res.data >= 1 ? { success: "更新成功！" } : { error: "更新失败！" }
 }
 
 export const setTaskState = async (id, state) => {
@@ -340,7 +340,7 @@ export const createPost = async (prevState, formData) => {
     })
     revalidateTag("post")
 
-    return res.data >= 1 ? { success: true } : { error: "Fail to create" }
+    return res.data >= 1 ? { success: "创建成功！" } : { error: "创建失败！" }
 }
 
 export const updatePost = async (prevState, formData) => {
@@ -401,7 +401,7 @@ export const updatePost = async (prevState, formData) => {
     })
     revalidateTag("post")
 
-    return res.data >= 1 ? { success: true } : { error: "Fail to update" }
+    return res.data >= 1 ? { success: "更新成功！" } : { error: "更新失败！" }
 }
 
 export const deletePost = async (id) => {

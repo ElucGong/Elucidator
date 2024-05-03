@@ -3,18 +3,26 @@
 import React from 'react'
 import styles from './spacePostForm.module.css'
 import { useFormState } from "react-dom"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { message } from 'antd'
 
 const SpacePostForm = ({ user, task, post, action }) => {
   const [state, formAction] = useFormState(action, undefined)
+  const [messageApi, contextHolder] = message.useMessage()
 
   const router = useRouter()
 
   useEffect(() => {
-    state?.success && router.push("/space?type=post&page=1&size=10")
-  }, [state?.success, router])
+    if (state?.error){
+      messageApi.destroy()
+      messageApi.error(state.error)
+    }
+    else if (state?.success) {
+      messageApi.destroy()
+      messageApi.success(state.success, 1).then(() => router.push("/space?type=post&page=1&size=10"))
+    }
+  }, [state, router])
 
   return (
     <form className={styles.form} action={formAction}>
@@ -53,8 +61,8 @@ const SpacePostForm = ({ user, task, post, action }) => {
       <input type="hidden" name="oldMedia" value={post?.media} />
       <input type="hidden" name="oldCover" value={post?.cover} />
       <input type="hidden" name="state" value={task.state} />
-      <button>提交</button>
-      {state?.error && message.error(state?.error)}
+      <button onClick={() => messageApi.loading("正在执行操作...")}>提交</button>
+      {contextHolder}
     </form>
   )
 }

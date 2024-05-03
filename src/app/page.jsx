@@ -26,7 +26,12 @@ export default async function Home() {
       <div className={styles.top}>
         <h1>欢迎使用本视频打卡系统！</h1>
         <h2>每个人都可以在这里实现自由地教学，参与丰富的活动！</h2>
-        <h2>注册登录以解锁完整的功能！</h2>
+        {
+          session ? 
+          <h2>欢迎回来，{session.user.name}！</h2>
+          :
+          <h2>点击右上角登录以解锁完整的功能！</h2>
+        }
       </div>
       {
         hitokoto &&

@@ -7,7 +7,7 @@
 }
 
 .container:hover{
-    background-color: rgb(248, 234, 209);
+    background-color: var(--ctnHover);
 }
 
 .imgContainer {
@@ -44,7 +44,7 @@
 
 .link:hover {
     cursor: pointer;
-    color: rgb(80, 175, 253)
+    color: var(--btnHover)
 }
 
 .bottom {

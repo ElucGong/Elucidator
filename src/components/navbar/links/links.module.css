@@ -1,12 +1,16 @@
 .links{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .logout{
     cursor: pointer;
     font-weight: bold;
+    font-family: inherit;
+    margin-left: 5px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .menuButton,
@@ -24,19 +28,22 @@
         cursor: pointer;
         font-size: 30px;
         font-weight: bold;
+        font-family: inherit;
+        background-color: var(--bgHard);
     }
 
     .mobileLinks{
         position: absolute;
         top: 100px;
         right: 0;
-        width: 40%;
+        width: 20%;
         height: calc(100vh - 100px);
-        background-color: aqua;
+        background-color: var(--bgHard);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 15px;
+        z-index: 10;
     }
 }
