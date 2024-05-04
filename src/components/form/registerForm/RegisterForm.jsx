@@ -35,7 +35,7 @@ const RegisterForm = () => {
         placeholder="再次输入密码"
         name="passwordRepeat"
       />
-      <button onClick={() => messageApi.loading("正在执行操作...")}>注册</button>
+      <button onClick={() => messageApi.loading("正在执行操作...", 0)}>注册</button>
       <Link href="/login">
         一级注册过账号? <b>前往登录</b>
       </Link>

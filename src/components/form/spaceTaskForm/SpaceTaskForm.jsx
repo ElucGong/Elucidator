@@ -59,7 +59,7 @@ const SpaceTaskForm = ({ user, task, action }) => {
       <input type="hidden" name="id" value={task?.id} />
       <input type="hidden" name="oldMedia" value={task?.media} />
       <input type="hidden" name="oldCover" value={task?.cover} />
-      <button onClick={() => messageApi.loading("正在执行操作...")}>提交</button>
+      <button onClick={() => messageApi.loading("正在执行操作...", 0)}>提交</button>
       {contextHolder}
     </form>
   )

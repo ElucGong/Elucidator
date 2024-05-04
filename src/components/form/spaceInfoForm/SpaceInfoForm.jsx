@@ -68,7 +68,7 @@ const SpaceInfoForm = ({ user }) => {
       </div>
       <input type="hidden" name="id" value={user.id} />
       <input type="hidden" name="avatar" value={user.avatar} />
-      <button onClick={() => messageApi.loading("正在执行操作...")}>保存</button>
+      <button onClick={() => messageApi.loading("正在执行操作...", 0)}>保存</button>
       {contextHolder}
     </form>
   )

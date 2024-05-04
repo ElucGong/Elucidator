@@ -8,6 +8,9 @@ const nextConfig = {
       },
       {
         hostname: "localhost"
+      },
+      {
+        hostname: "104.168.175.191"
       }
     ]
   }

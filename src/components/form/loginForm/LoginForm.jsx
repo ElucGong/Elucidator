@@ -22,7 +22,7 @@ const LoginForm = () => {
     <form className={styles.form} action={formAction}>
       <input type="text" placeholder="用户名" name="username" />
       <input type="password" placeholder="密码" name="password" />
-      <button onClick={() => messageApi.loading("正在执行操作...")}>登录</button>
+      <button onClick={() => messageApi.loading("正在执行操作...", 0)}>登录</button>
       <Link href="/register">
         没有注册过账号? <b>前往注册</b>
       </Link>
