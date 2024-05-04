@@ -21,6 +21,9 @@ body{
   background-color: var(--bg);
   color: var(--text);
   font-family:'jiangxizhuokai', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a{

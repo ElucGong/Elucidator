@@ -72,8 +72,8 @@ const StatisticPage = async ({ params, searchParams }) => {
   }
 
   function timeFn(time) {
-    const dateBegin = new Date(time.replace(/-/g, "/"))
-    const dateEnd = new Date()
+    const dateBegin = new Date(task.createdAt.replace(/-/g, "/"))
+    const dateEnd = new Date(time.replace(/-/g, "/"))
     const dateDiff = dateEnd.getTime() - dateBegin.getTime()
     const dayDiff = Math.ceil(dateDiff / (24 * 3600 * 1000))
     return dayDiff
@@ -162,3 +162,7 @@ const StatisticPage = async ({ params, searchParams }) => {
 }
 
 export default StatisticPage
+
+export const metadata = {
+  title: "任务统计数据"
+}

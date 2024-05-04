@@ -23,3 +23,7 @@ const SpaceTaskCreatePage = async () => {
 }
 
 export default SpaceTaskCreatePage
+
+export const metadata = {
+  title: "创建任务"
+}

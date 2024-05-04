@@ -43,3 +43,7 @@ const SpacePostUpdatePage = async ({ searchParams }) => {
 }
 
 export default SpacePostUpdatePage
+
+export const metadata = {
+  title: "更新打卡信息"
+}

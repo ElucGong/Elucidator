@@ -18,3 +18,7 @@ const SpaceInfoPage = async () => {
 }
 
 export default SpaceInfoPage
+
+export const metadata = {
+  title: "修改用户信息"
+}

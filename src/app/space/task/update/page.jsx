@@ -31,3 +31,7 @@ const SpaceTaskUpdatePage = async ({ searchParams }) => {
 }
 
 export default SpaceTaskUpdatePage
+
+export const metadata = {
+  title: "更新任务信息"
+}

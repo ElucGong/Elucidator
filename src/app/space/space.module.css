@@ -18,6 +18,10 @@
     line-height: 40px;
 }
 
+.button:hover{
+    background-color: var(--ctnHover);
+}
+
 .bottom {
     display: flex;
     flex-direction: column;

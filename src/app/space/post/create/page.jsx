@@ -26,3 +26,7 @@ const SpacePostCreatePage = async ({ searchParams }) => {
 }
 
 export default SpacePostCreatePage
+
+export const metadata = {
+  title: "创建打卡"
+}
