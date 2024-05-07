@@ -33,7 +33,7 @@ const UserCardSmall = async ({ user, action }) => {
         </div>
       </div>
       {
-        action && session.user.id != user.id && (
+        action && session.user.isAdmin && session.user.id != user.id && (
           <div className={styles.action}>
             <ActiveButton user={user}/>
           </div>

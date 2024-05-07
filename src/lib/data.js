@@ -1,9 +1,11 @@
+"use server"
+
 const ip = process.env.BACKEND
 
 export const getTask = async (title, page, size) => {
     const res = await fetch(`${ip}/task?value=${title}&page=${page}&size=${size}`, { next: { tags: ['task'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -11,7 +13,7 @@ export const getTask = async (title, page, size) => {
 export const getTaskById = async (id) => {
     const res = await fetch(`${ip}/task/${id}`, { next: { tags: ['task'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -19,7 +21,7 @@ export const getTaskById = async (id) => {
 export const getPost = async (title, page, size) => {
     const res = await fetch(`${ip}/post?value=${title}&page=${page}&size=${size}`, { next: { tags: ['post'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -27,7 +29,7 @@ export const getPost = async (title, page, size) => {
 export const getPostById = async (id) => {
     const res = await fetch(`${ip}/post/${id}`, { next: { tags: ['post'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -39,7 +41,7 @@ export const getUser = async (name, page, size) => {
     else
         res = await fetch(`${ip}/user?page=${page}&size=${size}`, { next: { tags: ['user'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -47,7 +49,7 @@ export const getUser = async (name, page, size) => {
 export const getUserById = async (id) => {
     const res = await fetch(`${ip}/user/${id}`, { next: { tags: ['user'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -60,7 +62,7 @@ export const getTaskByUser = async (uid, title, page, size) => {
         res = await fetch(`${ip}/task/uid/${uid}?page=${page}&size=${size}`, { next: { tags: ['task'] } })
 
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -72,7 +74,7 @@ export const getPostByUser = async (uid, title, page, size) => {
     else
         res = await fetch(`${ip}/post/uid/${uid}?page=${page}&size=${size}`, { next: { tags: ['post'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -80,7 +82,7 @@ export const getPostByUser = async (uid, title, page, size) => {
 export const getFollow = async (uid, tid) => {
     const res = await fetch(`${ip}/follow?uid=${uid}&tid=${tid}`, { next: { tags: ['follow'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -93,7 +95,7 @@ export const getTaskByFollow = async (uid, title, page, size) => {
         res = await fetch(`${ip}/task/follow/uid/${uid}?page=${page}&size=${size}`, { next: { tags: ['task'] } })
 
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -105,7 +107,7 @@ export const getPostByTask = async (tid, title, page, size) => {
     else
         res = await fetch(`${ip}/post/tid/${tid}?page=${page}&size=${size}`, { next: { tags: ['post'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -113,7 +115,7 @@ export const getPostByTask = async (tid, title, page, size) => {
 export const getStatisticPostDataByTask = async (tid) => {
     const res = await fetch(`${ip}/post/statistic/tid/${tid}`, { next: { tags: ['post', 'task'] } })
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }
@@ -126,7 +128,7 @@ export const getStatisticUserDataByTask = async (tid, name, page, size) => {
         res = await fetch(`${ip}/user/statistic/tid/${tid}?page=${page}&size=${size}`, { next: { tags: ['user', 'follow'] } })
 
     if (!res.ok)
-        throw new Error("Some thing went wrong...")
+        throw new Error("数据出了点小问题...")
 
     return res.json()
 }

@@ -27,7 +27,7 @@ const SpacePostUpdatePage = async ({ searchParams }) => {
       <div className={styles.task}>
         <div>任务</div>
         <div className={styles.taskCard}>
-          <TaskCardSmall task={task} action={false} />
+          <TaskCardSmall task={task} />
         </div>
       </div>
       <div className={styles.wrapper}>

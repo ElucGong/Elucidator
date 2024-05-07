@@ -16,7 +16,7 @@ const StatisticPage = async ({ params, searchParams }) => {
   if (!task)
     throw new Error("任务不存在或已删除！")
 
-  if (session.user.id != task.uid)
+  if (!session.user.isAdmin && session.user.id != task.uid)
     throw new Error("非法行为：这不是你创建的任务！")
 
   let { type, value, page, size } = searchParams

@@ -14,7 +14,7 @@ const OpenButton = ({ task }) => {
 
   const showConfirm = () => {
     confirm({
-      title: '确定要关闭任务吗？',
+      title: `确定要关闭任务「${task.title}」吗？`,
       content: '任务关闭状态下，别人无法在该任务下打卡。',
       okText: '确认',
       cancelText: '取消',

@@ -31,12 +31,20 @@ const TaskCardSmall = async ({ task, action }) => {
         </div>
       </div>
       {
-        action && session.user.id == task.uid && (
+        action && session?.user.id == task.uid && (
           <div className={styles.action}>
             <Button type='primary' href={`/space/task/update?id=${task.id}`}>更新</Button>
             <Button type='primary' href={`/space/task/statistic/${task.id}`}>统计数据</Button>
             <OpenButton task={task} />
-            <DeleteButton type="task" id={task.id}/>
+            <DeleteButton type="task" id={task.id} title={task.title}/>
+          </div>
+        )
+      }
+      {
+        action && session?.user.isAdmin && (
+          <div className={styles.action}>
+            <Button type='primary' href={`/space/task/statistic/${task.id}`}>统计数据</Button>
+            <DeleteButton type="task" id={task.id} title={task.title}/>
           </div>
         )
       }

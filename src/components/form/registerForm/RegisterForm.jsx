@@ -37,7 +37,7 @@ const RegisterForm = () => {
       />
       <button onClick={() => messageApi.loading("正在执行操作...", 0)}>注册</button>
       <Link href="/login">
-        一级注册过账号? <b>前往登录</b>
+        已经注册过账号? <b>前往登录</b>
       </Link>
       {contextHolder}
     </form>

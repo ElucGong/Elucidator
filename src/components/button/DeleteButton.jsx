@@ -4,12 +4,12 @@ import React from 'react'
 import { deleteTask, deletePost } from '@/lib/action'
 import { Button, Modal } from 'antd'
 
-const DeleteButton = ({ type, id }) => {
+const DeleteButton = ({ type, id, title }) => {
   const { confirm } = Modal;
 
   const showConfirm = () => {
     confirm({
-      title: type == 'task' ? '确定要删除任务吗？' : '确定要删除打卡吗？',
+      title: type == 'task' ? `确定要删除任务「${title}」吗？` : `确定要删除打卡「${title}」吗？`,
       okText: '确认',
       cancelText: '取消',
       onOk() {
