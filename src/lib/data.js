@@ -35,11 +35,7 @@ export const getPostById = async (id) => {
 }
 
 export const getUser = async (name, page, size) => {
-    let res
-    if (name)
-        res = await fetch(`${ip}/user?value=${name}&page=${page}&size=${size}`, { next: { tags: ['user'] } })
-    else
-        res = await fetch(`${ip}/user?page=${page}&size=${size}`, { next: { tags: ['user'] } })
+    const res = await fetch(`${ip}/user?value=${name}&page=${page}&size=${size}`, { next: { tags: ['user'] } })
     if (!res.ok)
         throw new Error("数据出了点小问题...")
 
@@ -55,12 +51,7 @@ export const getUserById = async (id) => {
 }
 
 export const getTaskByUser = async (uid, title, page, size) => {
-    let res
-    if (title)
-        res = await fetch(`${ip}/task/uid/${uid}?title=${title}&page=${page}&size=${size}`, { next: { tags: ['task'] } })
-    else
-        res = await fetch(`${ip}/task/uid/${uid}?page=${page}&size=${size}`, { next: { tags: ['task'] } })
-
+    const res = await fetch(`${ip}/task/uid/${uid}?title=${title}&page=${page}&size=${size}`, { next: { tags: ['task'] } })
     if (!res.ok)
         throw new Error("数据出了点小问题...")
 
@@ -68,11 +59,7 @@ export const getTaskByUser = async (uid, title, page, size) => {
 }
 
 export const getPostByUser = async (uid, title, page, size) => {
-    let res
-    if (title)
-        res = await fetch(`${ip}/post/uid/${uid}?title=${title}&page=${page}&size=${size}`, { next: { tags: ['post'] } })
-    else
-        res = await fetch(`${ip}/post/uid/${uid}?page=${page}&size=${size}`, { next: { tags: ['post'] } })
+    const res = await fetch(`${ip}/post/uid/${uid}?title=${title}&page=${page}&size=${size}`, { next: { tags: ['post'] } })
     if (!res.ok)
         throw new Error("数据出了点小问题...")
 
@@ -88,12 +75,7 @@ export const getFollow = async (uid, tid) => {
 }
 
 export const getTaskByFollow = async (uid, title, page, size) => {
-    let res
-    if (title)
-        res = await fetch(`${ip}/task/follow/uid/${uid}?title=${title}&page=${page}&size=${size}`, { next: { tags: ['task'] } })
-    else
-        res = await fetch(`${ip}/task/follow/uid/${uid}?page=${page}&size=${size}`, { next: { tags: ['task'] } })
-
+    const res = await fetch(`${ip}/task/follow/uid/${uid}?title=${title}&page=${page}&size=${size}`, { next: { tags: ['task'] } })
     if (!res.ok)
         throw new Error("数据出了点小问题...")
 
@@ -101,11 +83,7 @@ export const getTaskByFollow = async (uid, title, page, size) => {
 }
 
 export const getPostByTask = async (tid, title, page, size) => {
-    let res
-    if (title)
-        res = await fetch(`${ip}/post/tid/${tid}?title=${title}&page=${page}&size=${size}`, { next: { tags: ['post'] } })
-    else
-        res = await fetch(`${ip}/post/tid/${tid}?page=${page}&size=${size}`, { next: { tags: ['post'] } })
+    const res = await fetch(`${ip}/post/tid/${tid}?title=${title}&page=${page}&size=${size}`, { next: { tags: ['post'] } })
     if (!res.ok)
         throw new Error("数据出了点小问题...")
 
@@ -121,12 +99,7 @@ export const getStatisticPostDataByTask = async (tid) => {
 }
 
 export const getStatisticUserDataByTask = async (tid, name, page, size) => {
-    let res
-    if (name)
-        res = await fetch(`${ip}/user/statistic/tid/${tid}?name=${name}&page=${page}&size=${size}`, { next: { tags: ['user', 'follow'] } })
-    else
-        res = await fetch(`${ip}/user/statistic/tid/${tid}?page=${page}&size=${size}`, { next: { tags: ['user', 'follow'] } })
-
+    const res = await fetch(`${ip}/user/statistic/tid/${tid}?name=${name}&page=${page}&size=${size}`, { next: { tags: ['user', 'follow'] } })
     if (!res.ok)
         throw new Error("数据出了点小问题...")
 
