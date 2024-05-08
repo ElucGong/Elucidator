@@ -20,7 +20,7 @@ const UserCardLarge = ({ user }) => {
       </div>
       <div className={styles.right}>
         <div className={styles.name}>
-          <Link href={`/user/${user.name}-${user.id}?type=task&page=1&size=16`} className={styles.link}>{user.name}</Link>
+          <Link href={`/user/${user.name}-${user.id}`} className={styles.link}>{user.name}</Link>
         </div>
         <div className={styles.description}>
           {user.description}

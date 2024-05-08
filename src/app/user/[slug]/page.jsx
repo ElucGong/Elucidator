@@ -9,9 +9,9 @@ import MyPagination from '@/components/pagination/MyPagination'
 
 const UserPage = async ({ params, searchParams }) => {
   const { slug } = params
-  let { type, value, page, size } = searchParams
   const id = slug.split('-')[1]
   const user = await getUserById(id)
+  let { type, value, page, size } = searchParams
 
   type = type || "task"
   value = value || ''
